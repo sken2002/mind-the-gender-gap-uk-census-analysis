@@ -14,7 +14,7 @@ This analysis seeks to answer several key questions about the population:
 ## Data Sources
 
 1.  **Primary Dataset:** `2011 Census Microdata Teaching File.csv`
-    * **Source:** Provided for the LBS Data Visualisation Project.
+    * **Source:** Got from the ONS Census Government website.
     * **Note:** This file is included in the repository.
 
 2.  **Geospatial Data:** `NUTS1_Jan_2018_SGCB_in_the_UK.shp`

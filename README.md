@@ -1,6 +1,8 @@
 # UK 2011 Census: A Visual Analysis of Demographic & Gender Disparities
 
-This repository contains the final group project for the Data Visualisation course. It explores the 2011 UK Census microdata to uncover key demographic and economic patterns across England and Wales, with a special focus on geospatial disparities in work, gender, and health.
+**Project Objective:** To explore the 2011 UK Census microdata to uncover key demographic and economic patterns across England and Wales, with a special focus on geospatial disparities in work, gender, and health.
+
+---
 
 ## Key Questions Addressed
 
@@ -9,36 +11,50 @@ This analysis seeks to answer several key questions about the population:
 * How is the workforce structured, and what is the gender composition of different occupations?
 * How do major life events (like marital status) correlate with economic activity?
 * What is the relationship between age and self-reported health status?
-* Using a decomposition model, what observable factors (like occupation, industry, family status) contribute to the gender gap in work hours, and how much remains unexplained?
+* Using a decomposition model, what observable factors (like occupation, industry, and family status) contribute to the gender gap in work hours, and how much remains unexplained?
+
+---
 
 ## Data Sources
 
-1.  **Primary Dataset:** `2011 Census Microdata Teaching File.csv`
-    * **Source:** Got from the ONS Census Government website.
+1.  **Primary Dataset:**
+    * **File:** `2011 Census Microdata Teaching File.csv`
+    * **Source:** ONS Census Government website.
     * **Note:** This file is included in the repository.
 
-2.  **Geospatial Data:** `NUTS1_Jan_2018_SGCB_in_the_UK.shp`
-    * **Source:** ONS Open Geography Portal (or project-provided data).
+2.  **Geospatial Data:**
+    * **File:** `NUTS1_Jan_2018_SGCB_in_the_UK.shp`
+    * **Source:** ONS Open Geography Portal.
     * **Note:** The shapefile and its related files (`.dbf`, `.shx`, etc.) are included in the `/data` folder for reproducibility.
+
+---
 
 ## Key Findings & Visualizations
 
-The analysis is presented as a series of static and interactive visualizations:
+The analysis is presented as a series of static (Matplotlib/Seaborn) and interactive (Plotly) visualizations.
 
-1.  **The Regional Work-Hour Gender Gap:** A 1x4 dashboard (created with Matplotlib/GeoPandas) that maps and ranks the average weekly work hours for men and women across UK regions. This visual clearly shows that men work longer hours on average, with the gap being most pronounced in London.
-   
-2.  **The "Maternity Penalty":** A line graph showing the average hours worked by age and gender. It highlights a distinct dip in work hours for women in the 35-44 age bracket, a trend not seen for men.
+1.  **The Regional Work-Hour Gender Gap:** A 2x2 dashboard that maps and ranks average weekly work hours for men and women.
+    * **Insight:** Men consistently work longer hours, but the gap varies significantly by region. The discrepancy is most pronounced in London, where men work the longest hours and women work the shortest.
 
-3.  **Gender Composition of Occupations:** An interactive 100% stacked bar chart (using Plotly) that reveals the stark gender segregation across professions. "Admin" and "Caring/Leisure" are heavily female-dominated, while "Skilled Trades" and "Process/Machine" are overwhelmingly male.
+2.  **The "Maternity Penalty":** A line graph showing the average hours worked by age and gender, complete with a 95% confidence interval.
+    * **Insight:** It highlights a distinct dip in work hours for women in the 35-44 age bracket, a trend not seen for men, correlating with the average age of childbirth.
 
-4.  **Economic Activity by Marital Status:** This chart illustrates how economic roles shift with marital status. For instance, "Looking after home" is a significant category for married individuals but almost non-existent for single individuals, who are primarily "Employees."
+3.  **Gender Composition of Occupations:** An interactive 100% stacked bar chart.
+    * **Insight:** Reveals stark gender segregation. "Admin" and "Caring/Leisure" are heavily female-dominated, while "Skilled Trades" and "Process/Machine" are overwhelmingly male.
 
-5.  **The Age-Health Connection:** A heatmap (using Seaborn) that clearly demonstrates the strong negative correlation between age and self-reported health.
+4.  **Economic Activity by Marital Status:** A 100% stacked bar chart illustrating how economic roles shift with marital status.
+    * **Insight:** "Looking after home" is a significant category for married individuals but almost non-existent for single individuals, who are primarily "Employees."
 
+5.  **The Age-Health Connection:** A heatmap showing the percentage breakdown of health status by age.
+    * **Insight:** Clearly demonstrates the strong negative correlation between age and self-reported health, with the percentage of "Very Good" health reports declining in older age brackets.
+
+---
 
 ## Modeling the Gender-Hours Gap
 
 An **Oaxaca-Blinder decomposition** was used to break down the gap in average work hours. The model confirms that observable factors like occupation, industry, and family composition account for a portion of the disparity. However, a significant part of the gap remains "unexplained," suggesting that unobserved variables (such as education, personal choice, or potential discrimination) play a major role.
+
+---
 
 ## How to Reproduce This Work
 
